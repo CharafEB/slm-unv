@@ -1,0 +1,12 @@
+FROM qwen2.5:1.5b-instruct
+PARAMETER temperature 0.4
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.1
+PARAMETER num_ctx 2048
+
+SYSTEM """
+
+Does this question need to search the university database?
+- YES if: question about university (registration, books, articles, news, schedules, exams, departments, professors)
+- NO if: greeting, casual talk, general question, thank you
+"""
