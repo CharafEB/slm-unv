@@ -1,0 +1,955 @@
+__label__article_search can you find me an article about artificial intelligence
+__label__article_search search for articles titled machine learning
+__label__article_search find me a paper about neural networks
+__label__article_search look for research on data science
+__label__article_search find articles regarding cybersecurity
+__label__article_search search papers about database design
+__label__article_search find me articles on web development
+__label__article_search search for research about software engineering
+__label__article_search find papers on cloud computing
+__label__article_search look for articles about blockchain technology
+__label__article_search search for papers on artificial neural networks
+__label__article_search find me research about big data analytics
+__label__article_search search articles about natural language processing
+__label__article_search find papers regarding computer vision
+__label__article_search look for articles on deep learning
+__label__article_search search for research about data mining
+__label__article_search find me papers on network security
+__label__article_search search articles about algorithm optimization
+__label__article_search find papers on distributed systems
+__label__article_search look for articles about mobile application development
+__label__author_article find articles by professor Ahmed Ali
+__label__author_article show me papers written by Dr. Fatima Hassan
+__label__author_article search for works by professor Sara Ahmed
+__label__author_article find publications by author Laila Mohammed
+__label__author_article search papers authored by Dr. Noor Ali
+__label__author_article find me articles by Dr. Omar Mohammed
+__label__author_article show publications by author Mona Hassan
+__label__author_article search for writings by professor Ibrahim Ahmed
+__label__author_article find papers by Dr. Zainab Hassan
+__label__author_article look for articles authored by professor Khaled Ahmed
+__label__author_article search for research by author Rania Ali
+__label__author_article find me papers written by Dr. Youssef Hassan
+__label__author_article show me articles by professor Mohamed Ahmed
+__label__author_article search for publications by author Leila Mohammed
+__label__author_article find papers by Dr. Hassan Ibrahim
+__label__author_article look for articles authored by professor Samira Ahmed
+__label__author_article search for writings by author Amir Ali
+__label__author_article find me research by Dr. Dina Hassan
+__label__author_article show papers by professor Khalid Mohammed
+__label__author_article search for articles written by author Noha Ahmed
+__label__university when does registration start
+__label__university what are the exam schedules
+__label__university how many departments are in the university
+__label__university tell me about the faculty of engineering
+__label__university what are the university news and announcements
+__label__university who is the dean of the university
+__label__university what is the library hours
+__label__university how can I contact the admissions office
+__label__university what is the university address
+__label__university tell me about student services
+__label__general hello
+__label__general hi
+__label__general how are you
+__label__general thanks
+__label__general thank you
+__label__general goodbye
+__label__general bye
+__label__general what is your name
+__label__general who are you
+__label__general nice to meet you
+__label__general how can I help you
+__label__general what can you do
+__label__general tell me about yourself
+__label__general what is artificial intelligence
+__label__general what is machine learning
+__label__general what is python
+__label__general what is programming
+__label__general what is a database
+__label__general what is cloud computing
+__label__general what is cybersecurity
+__label__general how does the internet work
+__label__general what is web development
+__label__general hey
+__label__general good morning
+__label__general good afternoon
+__label__general good evening
+__label__general how’s it going
+__label__general what’s up
+__label__general nice to meet you
+__label__general pleasure to meet you
+__label__general see you later
+__label__general have a nice day
+__label__general take care
+__label__general talk to you soon
+__label__general catch you later
+__label__general good night
+__label__general all the best
+__label__general what is deep learning
+__label__general what is computer vision
+__label__general what is reinforcement learning
+__label__general what is a neural network
+__label__general what is overfitting
+__label__general what is cross validation
+__label__general what is supervised learning
+__label__general what is unsupervised learning
+__label__general what is a chatbot
+__label__general what is natural language generation
+__label__general what is tokenization
+__label__general what is stemming
+__label__general what is lemmatization
+__label__general what is a transformer model
+__label__general what is attention mechanism
+__label__general what is open source
+__label__general what is an api
+__label__general what is rest api
+__label__general what is json
+__label__general what is xml
+__label__general what is a server
+__label__general what is a client
+__label__general what is http
+__label__general what is https
+__label__general what is ssl
+__label__general can you help me
+__label__general are you a bot
+__label__general are you human
+__label__general can you understand me
+__label__general do you speak arabic
+__label__general can you answer questions
+__label__general what can’t you do
+__label__general are you smart
+__label__general how do you work
+__label__general who made you
+__label__general are you free to use
+__label__general can you learn from me
+__label__general do you remember me
+__label__general can you search the internet
+__label__general can you summarize articles
+__label__general you’re welcome
+__label__general no problem
+__label__general my pleasure
+__label__general sorry
+__label__general I’m sorry
+__label__general excuse me
+__label__general pardon me
+__label__general thanks a lot
+__label__general thank you very much
+__label__general I appreciate your help
+__label__general what is life
+__label__general why are we here
+__label__general what is the meaning of life
+__label__general do you have feelings
+__label__general can machines think
+__label__general will ai take over the world
+__label__general are you conscious
+__label__general what do you dream about
+__label__general tell me a joke
+__label__general make me laugh
+__label__general say something funny
+__label__general what’s your favorite color
+__label__general do you like humans
+__label__general are you male or female
+__label__general what’s your opinion on ai ethics
+
+__label__article_search can you find me an article about artificial intelligence
+__label__article_search search for articles titled machine learning
+__label__article_search find me a paper about neural networks
+__label__article_search look for research on data science
+__label__article_search find articles regarding cybersecurity
+__label__article_search search papers about database design
+__label__article_search find me articles on web development
+__label__article_search search for research about software engineering
+__label__article_search find papers on cloud computing
+__label__article_search look for articles about blockchain technology
+__label__article_search search for papers on artificial neural networks
+__label__article_search find me research about big data analytics
+__label__article_search search articles about natural language processing
+__label__article_search find papers regarding computer vision
+__label__article_search look for articles on deep learning
+__label__article_search search for research about data mining
+__label__article_search find me papers on network security
+__label__article_search search articles about algorithm optimization
+__label__article_search find papers on distributed systems
+__label__article_search look for articles about mobile application development
+__label__article_search search for articles titled quantum computing
+__label__article_search find research about edge computing
+__label__article_search look for papers on machine vision
+__label__article_search search articles about reinforcement learning
+__label__article_search find papers regarding supervised learning
+__label__article_search look for articles on unsupervised learning
+__label__article_search search for research about transfer learning
+__label__article_search find me papers on convolutional neural networks
+__label__article_search search articles about recurrent neural networks
+__label__article_search look for research on lstm networks
+__label__article_search find papers about natural language understanding
+__label__article_search search for articles on sentiment analysis
+__label__article_search look for research about text mining
+__label__article_search find me papers on information retrieval
+__label__article_search search articles about recommendation systems
+__label__article_search find research on knowledge graphs
+__label__article_search look for papers about ontology engineering
+__label__article_search search for articles on semantic web
+__label__article_search find me research about linked data
+__label__article_search look for papers on data integration
+__label__article_search search articles about data warehousing
+__label__article_search find research on data visualization
+__label__article_search look for papers on business intelligence
+__label__article_search search for articles about data governance
+__label__article_search find me papers on data quality
+__label__article_search look for research about master data management
+__label__article_search search articles on metadata management
+__label__article_search find papers about data lineage
+__label__article_search search for research on data catalogs
+__label__article_search look for articles about data lakes
+__label__article_search find me papers on data pipelines
+__label__article_search search for research about etl processes
+__label__article_search look for papers on data transformation
+__label__article_search find articles regarding data loading
+__label__article_search search for papers on batch processing
+__label__article_search find me research about stream processing
+__label__article_search look for articles on real time processing
+__label__article_search search for papers titled apache spark
+__label__article_search find research about hadoop ecosystem
+__label__article_search look for articles on mapreduce
+__label__article_search search papers about nosql databases
+__label__article_search find for me research on mongodb
+__label__article_search look for articles about cassandra database
+__label__article_search search for papers on couchdb
+__label__article_search find me articles regarding neo4j
+__label__article_search look for research about graph databases
+__label__article_search search papers on relational databases
+__label__article_search find articles about postgresql
+__label__article_search search for research on mysql optimization
+__label__article_search look for papers about database indexing
+__label__article_search find me articles on query optimization
+__label__article_search search for papers regarding transaction management
+__label__article_search look for research about acid properties
+__label__article_search find articles on concurrency control
+__label__article_search search papers about distributed transactions
+__label__article_search find for me research on database replication
+__label__article_search look for articles about database sharding
+__label__article_search search for papers on partitioning strategies
+__label__article_search find me research about load balancing
+__label__article_search look for articles on high availability
+__label__article_search search papers about disaster recovery
+__label__article_search find articles regarding backup strategies
+__label__article_search search for research on data redundancy
+__label__article_search look for papers about fault tolerance
+__label__article_search find me articles on system reliability
+__label__article_search search for papers about performance tuning
+__label__article_search look for research on database benchmarking
+__label__article_search find articles on capacity planning
+__label__article_search search papers regarding monitoring systems
+__label__article_search find for me research about logging systems
+__label__article_search look for articles on tracing systems
+__label__article_search search for papers about metrics collection
+__label__article_search find me research on time series databases
+__label__article_search look for articles about influxdb
+__label__article_search search papers on prometheus monitoring
+__label__article_search find articles regarding elk stack
+__label__article_search search for research on log aggregation
+__label__article_search look for papers about centralized logging
+__label__article_search find me articles on structured logging
+__label__article_search search for papers about json logging
+__label__article_search look for research on log analysis
+__label__article_search find articles on anomaly detection
+__label__article_search search papers about statistical analysis
+__label__article_search find for me research on hypothesis testing
+__label__article_search look for articles about regression analysis
+__label__article_search search for papers on classification algorithms
+__label__article_search find me research about clustering algorithms
+__label__article_search look for articles on decision trees
+__label__article_search search papers about random forests
+__label__article_search find articles regarding ensemble methods
+__label__article_search search for research on gradient boosting
+__label__article_search look for papers about xgboost
+__label__article_search find me articles on support vector machines
+__label__article_search search for papers about naive bayes
+__label__article_search look for research on bayesian networks
+__label__article_search find articles on probabilistic models
+__label__article_search search papers regarding markov models
+__label__article_search find for me research about hidden markov models
+__label__article_search look for articles on gaussian processes
+__label__article_search search for papers about kernel methods
+__label__article_search find me research on feature extraction
+__label__article_search look for articles about feature selection
+__label__article_search search papers on dimensionality reduction
+__label__article_search find articles regarding principal component analysis
+__label__article_search search for research on manifold learning
+__label__article_search look for papers about embedding methods
+__label__article_search find me articles on word embeddings
+__label__article_search search for papers about word2vec
+__label__article_search look for research on glove embeddings
+__label__article_search find articles on fasttext embeddings
+__label__article_search search papers regarding bert models
+__label__article_search find for me research about gpt models
+__label__article_search look for articles on transformer architecture
+__label__article_search search for papers about attention mechanisms
+__label__article_search find me research on sequence to sequence models
+__label__article_search look for articles about encoder decoder architecture
+__label__article_search search papers on autoencoders
+__label__article_search find articles regarding variational autoencoders
+__label__article_search search for research on generative adversarial networks
+__label__article_search look for papers about gans
+__label__article_search find me articles on diffusion models
+__label__article_search search for papers about score based models
+__label__article_search look for research on energy based models
+__label__article_search find articles on flow based models
+__label__article_search search papers regarding mixture models
+__label__article_search find for me research about expectation maximization
+__label__article_search look for articles on variational inference
+__label__article_search search for papers about monte carlo methods
+__label__article_search find me research on markov chain monte carlo
+__label__article_search look for articles about gibbs sampling
+__label__article_search search papers on metropolis hastings algorithm
+__label__article_search find articles regarding simulated annealing
+__label__article_search search for research on genetic algorithms
+__label__article_search look for papers about particle swarm optimization
+__label__article_search find me articles on ant colony optimization
+__label__article_search search for papers about evolutionary algorithms
+__label__article_search look for research on neuroevolution
+__label__article_search find articles on neural architecture search
+__label__article_search search papers regarding automated machine learning
+__label__article_search find for me research about hyperparameter optimization
+__label__article_search look for articles on grid search methods
+__label__article_search search for papers about random search
+__label__article_search find me research on bayesian optimization
+__label__article_search look for articles about early stopping
+__label__article_search search papers on regularization techniques
+__label__article_search find articles regarding dropout regularization
+__label__article_search search for research on batch normalization
+__label__article_search look for papers about layer normalization
+__label__article_search find me articles on group normalization
+__label__article_search search for papers about instance normalization
+__label__article_search look for research on weight normalization
+__label__article_search find articles on gradient normalization
+__label__article_search search papers regarding activation functions
+__label__article_search find for me research about relu activation
+__label__article_search look for articles on leaky relu
+__label__article_search search for papers about elu activation
+__label__article_search find me research on sigmoid activation
+__label__article_search look for articles about tanh activation
+__label__article_search search papers on softmax function
+__label__article_search find articles regarding loss functions
+__label__article_search search for research on cross entropy loss
+__label__article_search look for papers about mean squared error
+__label__article_search find me articles on mean absolute error
+__label__article_search search for papers about huber loss
+__label__article_search look for research on focal loss
+__label__article_search find articles on triplet loss
+__label__article_search search papers regarding contrastive loss
+__label__article_search find for me research about wasserstein loss
+__label__article_search look for articles on hinge loss
+__label__article_search search for papers about ranking loss
+__label__article_search find me research on metric learning
+__label__article_search look for articles about distance metrics
+__label__article_search search papers on euclidean distance
+__label__article_search find articles regarding manhattan distance
+__label__article_search search for research on cosine similarity
+__label__article_search look for papers about jaccard similarity
+__label__article_search find me articles on levenshtein distance
+__label__article_search search for papers about hamming distance
+__label__article_search look for research on kullback leibler divergence
+__label__article_search find articles on wasserstein distance
+__label__article_search search papers regarding earth mover distance
+__label__article_search find for me research about optimal transport
+__label__article_search look for articles on sliced wasserstein distance
+__label__article_search search for papers about maximum mean discrepancy
+__label__article_search could you show me any recent papers on federated learning?
+__label__article_search is there any research about ethical ai?
+__label__article_search do you have articles discussing quantum machine learning?
+__label__article_search are there any studies on ai in healthcare?
+__label__article_search has anyone published about ai and climate change?
+__label__article_search articles have been published on transformer models
+__label__article_search research has been conducted on few-shot learning
+__label__article_search a survey was published on large language models
+__label__article_search several papers were written about multimodal learning
+__label__article_search an extensive review exists on graph neural networks
+__label__article_search retrieve scholarly work on explainable ai
+__label__article_search fetch academic publications about edge ai
+__label__article_search pull up peer-reviewed studies on ai fairness
+__label__article_search locate scientific literature on neuromorphic computing
+__label__article_search bring up technical reports on model compression
+__label__article_search show me the latest research on diffusion models
+__label__article_search find the most cited paper on bert
+__label__article_search give me a comprehensive survey on computer vision
+__label__article_search show me state-of-the-art articles on nlp
+__label__article_search find me a recent review on foundation models
+__label__article_search papers about Dr. Ahmed Hassan
+__label__article_search research on Professor Fatima Ali's contributions
+__label__article_search studies discussing Dr. Sara Mohammed's theory
+__label__article_search articles about Dr. Omar Hassan's framework
+__label__article_search work on Professor Noor Ahmed's methodology
+__label__article_search analysis of Dr. Ibrahim Mohammed's approach
+__label__article_search critique of Dr. Zainab Ali's model
+__label__article_search survey of Professor Khaled Hassan's impact
+__label__article_search review of Dr. Rania Mohammed's publications
+__label__article_search discussion of Dr. Mona Ahmed's findings
+__label__article_search papers on Dr. Youssef Hassan's algorithm
+__label__article_search research about Professor Mohamed Ali's system
+__label__article_search studies on Dr. Leila Mohammed's architecture
+__label__article_search articles discussing Professor Hassan Ahmed
+__label__article_search work about Dr. Samira Ali's research
+__label__article_search analysis of author Amir Hassan
+__label__article_search survey of Dr. Dina Mohammed's work
+__label__article_search review of Professor Khalid Ahmed's contributions
+__label__article_search papers discussing Dr. Nabil's framework
+__label__article_search research on Dr. Mira's vision systems
+__label__article_search publications discussing Dr. Lina
+__label__article_search yes the article title is how ai can be human
+__label__article_search the article title is ethical implications of artificial intelligence
+__label__article_search i found an article titled can machines think
+__label__article_search the paper is called towards human like ai
+__label__article_search the research is titled artificial consciousness and morality
+__label__article_search yes i am looking for an article named ai and empathy
+
+
+__label__author_article find articles by professor Ahmed Ali
+__label__author_article show me papers written by Dr. Fatima Hassan
+__label__author_article search for works by professor Sara Ahmed
+__label__author_article find publications by author Laila Mohammed
+__label__author_article search papers authored by Dr. Noor Ali
+__label__author_article find me articles by Dr. Omar Mohammed
+__label__author_article show publications by author Mona Hassan
+__label__author_article search for writings by professor Ibrahim Ahmed
+__label__author_article find papers by Dr. Zainab Hassan
+__label__author_article look for articles authored by professor Khaled Ahmed
+__label__author_article search for research by author Rania Ali
+__label__author_article find me papers written by Dr. Youssef Hassan
+__label__author_article show me articles by professor Mohamed Ahmed
+__label__author_article search for publications by author Leila Mohammed
+__label__author_article find papers by Dr. Hassan Ibrahim
+__label__author_article look for articles authored by professor Samira Ahmed
+__label__author_article search for writings by author Amir Ali
+__label__author_article find me research by Dr. Dina Hassan
+__label__author_article show papers by professor Khalid Mohammed
+__label__author_article search for articles written by author Noha Ahmed
+__label__author_article find me all papers by Dr. Ahmed Hassan
+__label__author_article show me all articles by professor Fatima Ali
+__label__author_article search for complete works by Dr. Sara Mohammed
+__label__author_article find all publications by author Omar Hassan
+__label__author_article look for all research by professor Noor Ahmed
+__label__author_article search all articles by Dr. Ibrahim Mohammed
+__label__author_article find me everything written by author Zainab Ali
+__label__author_article show all papers by professor Khaled Hassan
+__label__author_article search for all writings by Dr. Rania Mohammed
+__label__author_article find all research by author Mona Ahmed
+__label__author_article look for papers authored by professor Youssef Hassan
+__label__author_article search for all articles by Dr. Mohamed Ali
+__label__author_article find me all work by author Leila Hassan
+__label__author_article show all publications by professor Hassan Mohammed
+__label__author_article search for all research by Dr. Samira Ahmed
+__label__author_article find all articles by author Amir Hassan
+__label__author_article look for complete bibliography by professor Dina Ali
+__label__author_article search for all papers by Dr. Khalid Mohammed
+__label__author_article find me all writings by author Noha Ahmed
+__label__author_article show all research by professor Ahmed Mohammed
+__label__author_article search for publications by Fatima Hassan
+__label__author_article find papers authored by Sara Ali
+__label__author_article look for works written by Omar Mohammed
+__label__author_article search articles by Noor Hassan
+__label__author_article find research by Ibrahim Ahmed
+__label__author_article show writings by Zainab Mohammed
+__label__author_article search for publications by Khaled Ali
+__label__author_article find articles by Rania Hassan
+__label__author_article look for papers by Mona Ahmed
+__label__author_article search for research by Youssef Mohammed
+__label__author_article find writings by Mohamed Ali
+__label__author_article show articles by Leila Hassan
+__label__author_article search for work by Hassan Ahmed
+__label__author_article find research by Samira Mohammed
+__label__author_article look for articles by Amir Ali
+__label__author_article search papers by Dina Hassan
+__label__author_article find for me works by Khalid Mohammed
+__label__author_article show me research by Noha Ahmed
+__label__author_article what has Ahmed Hassan written
+__label__author_article what papers did Fatima Ali publish
+__label__author_article what research has Sara Mohammed done
+__label__author_article what works has Omar Hassan created
+__label__author_article what articles did Noor Ahmed write
+__label__author_article what papers has Ibrahim Mohammed authored
+__label__author_article what research by Zainab Ali exists
+__label__author_article what has Khaled Hassan published
+__label__author_article what works has Rania Mohammed written
+__label__author_article what research has Mona Ahmed done
+__label__author_article what papers has Youssef Hassan authored
+__label__author_article what articles did Mohamed Ali write
+__label__author_article what research has Leila Mohammed published
+__label__author_article what works by Hassan Ahmed exist
+__label__author_article what papers has Samira Ali written
+__label__author_article what research by Amir Hassan exists
+__label__author_article what articles has Dina Mohammed published
+__label__author_article what works has Khalid Ahmed written
+__label__author_article articles from Ahmed Hassan
+__label__author_article papers from Fatima Ali
+__label__author_article research from Sara Mohammed
+__label__author_article publications from Omar Hassan
+__label__author_article writings from Noor Ahmed
+__label__author_article work from Ibrahim Mohammed
+__label__author_article contributions from Zainab Ali
+__label__author_article studies from Khaled Hassan
+__label__author_article research from Rania Mohammed
+__label__author_article papers from Mona Ahmed
+__label__author_article articles from Youssef Hassan
+__label__author_article publications from Mohamed Ali
+__label__author_article work from Leila Mohammed
+__label__author_article research from Hassan Ahmed
+__label__author_article papers from Samira Ali
+__label__author_article studies from Amir Hassan
+__label__author_article articles from Dina Mohammed
+__label__author_article publications from Khalid Ahmed
+__label__author_article by Ahmed Hassan
+__label__author_article by Fatima Ali
+__label__author_article by Sara Mohammed
+__label__author_article by Omar Hassan
+__label__author_article by Noor Ahmed
+__label__author_article by Ibrahim Mohammed
+__label__author_article by Zainab Ali
+__label__author_article by Khaled Hassan
+__label__author_article by Rania Mohammed
+__label__author_article by Mona Ahmed
+__label__author_article by Youssef Hassan
+__label__author_article by Mohamed Ali
+__label__author_article by Leila Mohammed
+__label__author_article by Hassan Ahmed
+__label__author_article by Samira Ali
+__label__author_article by Amir Hassan
+__label__author_article by Dina Mohammed
+__label__author_article by Khalid Ahmed
+__label__author_article authored by Ahmed Hassan
+__label__author_article authored by Fatima Ali
+__label__author_article authored by Sara Mohammed
+__label__author_article authored by Omar Hassan
+__label__author_article authored by Noor Ahmed
+__label__author_article authored by Ibrahim Mohammed
+__label__author_article authored by Zainab Ali
+__label__author_article authored by Khaled Hassan
+__label__author_article authored by Rania Mohammed
+__label__author_article authored by Mona Ahmed
+__label__author_article authored by Youssef Hassan
+__label__author_article authored by Mohamed Ali
+__label__author_article authored by Leila Mohammed
+__label__author_article authored by Hassan Ahmed
+__label__author_article authored by Samira Ali
+__label__author_article authored by Amir Hassan
+__label__author_article authored by Dina Mohammed
+__label__author_article authored by Khalid Ahmed
+__label__author_article written by Ahmed Hassan
+__label__author_article written by Fatima Ali
+__label__author_article written by Sara Mohammed
+__label__author_article written by Omar Hassan
+__label__author_article written by Noor Ahmed
+__label__author_article written by Ibrahim Mohammed
+__label__author_article written by Zainab Ali
+__label__author_article written by Khaled Hassan
+__label__author_article written by Rania Mohammed
+__label__author_article written by Mona Ahmed
+__label__author_article written by Youssef Hassan
+__label__author_article written by Mohamed Ali
+__label__author_article written by Leila Mohammed
+__label__author_article written by Hassan Ahmed
+__label__author_article written by Samira Ali
+__label__author_article written by Amir Hassan
+__label__author_article written by Dina Mohammed
+__label__author_article written by Khalid Ahmed
+__label__author_article published by Ahmed Hassan
+__label__author_article published by Fatima Ali
+__label__author_article published by Sara Mohammed
+__label__author_article published by Omar Hassan
+__label__author_article published by Noor Ahmed
+__label__author_article published by Ibrahim Mohammed
+__label__author_article published by Zainab Ali
+__label__author_article published by Khaled Hassan
+__label__author_article published by Rania Mohammed
+__label__author_article published by Mona Ahmed
+__label__author_article published by Youssef Hassan
+__label__author_article published by Mohamed Ali
+__label__author_article published by Leila Mohammed
+__label__author_article published by Hassan Ahmed
+__label__author_article published by Samira Ali
+__label__author_article published by Amir Hassan
+__label__author_article published by Dina Mohammed
+__label__author_article published by Khalid Ahmed
+__label__author_article from the author Ahmed Hassan
+__label__author_article from the author Fatima Ali
+__label__author_article from the author Sara Mohammed
+__label__author_article from the author Omar Hassan
+__label__author_article from the author Noor Ahmed
+__label__author_article from the author Ibrahim Mohammed
+__label__author_article from the author Zainab Ali
+__label__author_article from the author Khaled Hassan
+__label__author_article from the author Rania Mohammed
+__label__author_article from the author Mona Ahmed
+__label__author_article from the author Youssef Hassan
+__label__author_article from the author Mohamed Ali
+__label__author_article from the author Leila Mohammed
+__label__author_article from the author Hassan Ahmed
+__label__author_article from the author Samira Ali
+__label__author_article from the author Amir Hassan
+__label__author_article from the author Dina Mohammed
+__label__author_article from the author Khalid Ahmed
+__label__author_article contributions by Ahmed Hassan
+__label__author_article contributions by Fatima Ali
+__label__author_article contributions by Sara Mohammed
+__label__author_article contributions by Omar Hassan
+__label__author_article contributions by Noor Ahmed
+__label__author_article contributions by Ibrahim Mohammed
+__label__author_article contributions by Zainab Ali
+__label__author_article contributions by Khaled Hassan
+__label__author_article contributions by Rania Mohammed
+__label__author_article contributions by Mona Ahmed
+__label__author_article contributions by Youssef Hassan
+__label__author_article contributions by Mohamed Ali
+__label__author_article contributions by Leila Mohammed
+__label__author_article contributions by Hassan Ahmed
+__label__author_article contributions by Samira Ali
+__label__author_article contributions by Amir Hassan
+__label__author_article contributions by Dina Mohammed
+__label__author_article contributions by Khalid Ahmed
+__label__author_article show me author Ahmed Hassan
+__label__author_article show me author Fatima Ali
+__label__author_article show me author Sara Mohammed
+__label__author_article show me author Omar Hassan
+__label__author_article show me author Noor Ahmed
+__label__author_article show me author Ibrahim Mohammed
+__label__author_article show me author Zainab Ali
+__label__author_article show me author Khaled Hassan
+__label__author_article show me author Rania Mohammed
+__label__author_article show me author Mona Ahmed
+__label__author_article show me author Youssef Hassan
+__label__author_article show me author Mohamed Ali
+__label__author_article show me author Leila Mohammed
+__label__author_article show me author Hassan Ahmed
+__label__author_article show me author Samira Ali
+__label__author_article show me author Amir Hassan
+__label__author_article show me author Dina Mohammed
+__label__author_article show me author Khalid Ahmed
+__label__author_article give me Ahmed Hassan papers
+__label__author_article give me Fatima Ali papers
+__label__author_article give me Sara Mohammed papers
+__label__author_article give me Omar Hassan papers
+__label__author_article give me Noor Ahmed papers
+__label__author_article give me Ibrahim Mohammed papers
+__label__author_article give me Zainab Ali papers
+__label__author_article give me Khaled Hassan papers
+__label__author_article give me Rania Mohammed papers
+__label__author_article give me Mona Ahmed papers
+__label__author_article give me Youssef Hassan papers
+__label__author_article give me Mohamed Ali papers
+__label__author_article give me Leila Mohammed papers
+__label__author_article give me Hassan Ahmed papers
+__label__author_article give me Samira Ali papers
+__label__author_article give me Amir Hassan papers
+__label__author_article give me Dina Mohammed papers
+__label__author_article give me Khalid Ahmed papers
+__label__author_article list papers by Ahmed Hassan
+__label__author_article list papers by Fatima Ali
+__label__author_article list papers by Sara Mohammed
+__label__author_article list papers by Omar Hassan
+__label__author_article list papers by Noor Ahmed
+__label__author_article list papers by Ibrahim Mohammed
+__label__author_article list papers by Zainab Ali
+__label__author_article list papers by Khaled Hassan
+__label__author_article list papers by Rania Mohammed
+__label__author_article list papers by Mona Ahmed
+__label__author_article list papers by Youssef Hassan
+__label__author_article list papers by Mohamed Ali
+__label__author_article list papers by Leila Mohammed
+__label__author_article list papers by Hassan Ahmed
+__label__author_article list papers by Samira Ali
+__label__author_article list papers by Amir Hassan
+__label__author_article list papers by Dina Mohammed
+__label__author_article list papers by Khalid Ahmed
+__label__author_article what topics has Dr. Ahmed Hassan worked on?
+__label__author_article which fields has Professor Fatima Ali published in?
+__label__author_article has Dr. Omar Mohammed written about deep learning?
+__label__author_article did Professor Sara Ahmed contribute to nlp research?
+__label__author_article what is Dr. Zainab Hassan known for?
+__label__author_article i’m looking for anything by Dr. Noor Ali
+__label__author_article i need all publications from Professor Khaled Ahmed
+__label__author_article can you point me to work by Dr. Youssef Hassan?
+__label__author_article i’d like to read papers by Professor Mona Hassan
+__label__author_article anything authored by Dr. Ibrahim Mohammed would help
+__label__author_article retrieve all papers by Dr. Leila Mohammed
+__label__author_article list everything published by Professor Hassan Ahmed
+__label__author_article show me the bibliography of Dr. Samira Ali
+__label__author_article display all works by author Amir Hassan
+__label__author_article compile a list of publications by Dr. Dina Mohammed
+__label__author_article several papers have been authored by Dr. Khalid Ahmed
+__label__author_article important contributions were made by Professor Ahmed Hassan
+__label__author_article a number of studies were published by Dr. Fatima Ali
+__label__author_article key research was conducted by Professor Omar Hassan
+__label__author_article influential work has been written by Dr. Rania Mohammed
+__label__author_article can you show me what Dr. Ahmed has written
+__label__author_article can you show me what Professor Fatima published
+__label__author_article could you show me what Sara Mohammed has authored
+__label__author_article can you tell me what papers Omar Hassan has written
+__label__article_search papers on Ahmed Hassan and machine learning
+__label__article_search research about Fatima Ali and data privacy
+__label__article_search studies on Omar Mohammed and cybersecurity
+__label__article_search articles discussing Leila Mohammed's contributions to ai
+__label__article_search work related to Dr. Zainab Hassan and nlp
+__label__author_article show me research on computer vision by Dr. Tarek
+__label__author_article find papers on natural language processing by Professor Lena
+__label__author_article look for studies on quantum computing by Dr. Nabil
+__label__author_article search for work on deep learning by Dr. Mira
+__label__author_article retrieve articles on robotics by Sami
+__label__author_article pull up research on edge AI by Dr. Faisal
+__label__author_article locate papers on data mining by Dr. Lina
+__label__author_article find me a paper on federated learning by Omar
+__label__author_article show me publications on graph neural networks by Fatima
+__label__author_article search for articles on transformer models by Dr. Karim
+__label__author_article search for Dr. Lina's latest publication
+__label__author_article find Dr. Mira's work on vision systems
+__label__author_article show me Sami's papers on robotics
+__label__author_article retrieve Dr. Faisal's research on edge AI
+__label__author_article look up Professor Lena's contributions to nlp
+
+__label__university when does registration start
+__label__university what are the exam schedules
+__label__university how many departments are in the university
+__label__university tell me about the faculty of engineering
+__label__university what are the university news and announcements
+__label__university who is the dean of the university
+__label__university what is the library hours
+__label__university how can I contact the admissions office
+__label__university what is the university address
+__label__university tell me about student services
+__label__university what is the registration deadline
+__label__university when is the next semester starting
+__label__university what are the tuition fees
+__label__university how do I apply to the university
+__label__university what are the admission requirements
+__label__university tell me about scholarship opportunities
+__label__university what is the student housing policy
+__label__university how do I access the library online
+__label__university what are the campus facilities
+__label__university tell me about the computer labs
+__label__university what sports facilities are available
+__label__university how do I join a student club
+__label__university what are the student organizations
+__label__university tell me about campus activities
+__label__university what is the cafeteria menu
+__label__university where is the bookstore located
+__label__university what are the parking regulations
+__label__university how do I get a student ID card
+__label__university what is the student handbook
+__label__university tell me about academic advisors
+__label__university how do I declare a major
+__label__university what are the graduation requirements
+__label__university tell me about internship programs
+__label__university what career services are available
+__label__university how do I schedule an appointment with my advisor
+__label__university what are the office hours
+__label__university tell me about the health center
+__label__university what mental health services are available
+__label__university how do I access counseling services
+__label__university what is the disability services office
+__label__university tell me about international student services
+__label__university how do I apply for financial aid
+__label__university what is the fafsa process
+__label__university tell me about student loans
+__label__university what grants are available
+__label__university how do I appeal a financial aid decision
+__label__university what is the payment plan options
+__label__university tell me about work study opportunities
+__label__university how do I find part time jobs on campus
+__label__university what is the minimum gpa requirement
+__label__university tell me about academic probation
+__label__university what is the grade appeal process
+__label__university how do I request a transcript
+__label__university tell me about the honor code
+__label__university what is the disciplinary process
+__label__university how do I file a complaint
+__label__university tell me about the ombudsman office
+__label__university what are the residential life policies
+__label__university how do I request a room change
+__label__university tell me about residential adviser programs
+__label__university what is the housing lottery process
+__label__university how do I appeal a housing decision
+__label__university tell me about the faculty directory
+__label__university how do I contact a specific professor
+__label__university what is the office location of professor
+__label__university tell me about the research centers
+__label__university what grants are available for research
+__label__university how do I get involved in research
+__label__university tell me about the laboratory facilities
+__label__university what is the research ethics review process
+__label__university how do I apply for graduate school
+__label__university tell me about graduate programs
+__label__university what are the gre requirements
+__label__university how do I apply for doctoral programs
+__label__university tell me about postdoctoral opportunities
+__label__university what is the alumni network
+__label__university how do I get involved with alumni
+__label__university tell me about alumni events
+__label__university what is the alumni donation process
+__label__university how do I update my alumni profile
+__label__university tell me about the university history
+__label__university what is the university mission statement
+__label__university what are the university core values
+__label__university tell me about the university strategic plan
+__label__university what is the accreditation status
+__label__university how do I become a university student ambassador
+__label__university tell me about tour opportunities
+__label__university what is the open house schedule
+__label__university how do I attend a virtual campus tour
+__label__university tell me about the prospective student events
+__label__university what is the application deadline
+__label__university how much does it cost to attend
+__label__university tell me about the student to faculty ratio
+__label__university what are the class sizes
+__label__university how do I access online classes
+__label__university tell me about distance learning programs
+__label__university what is the online learning platform
+__label__university how do I use the learning management system
+__label__university tell me about technical support services
+__label__university what is the it help desk number
+__label__university how do I reset my password
+__label__university tell me about network connectivity
+__label__university what is the campus wifi password
+__label__university how do I report a security issue
+__label__university tell me about campus safety
+__label__university what is the emergency alert system
+__label__university how do I report a crime
+__label__university tell me about campus police
+__label__university what is the sexual assault reporting process
+__label__university how do I get a restraining order
+__label__university tell me about sexual harassment policies
+__label__university what is the title ix office
+__label__university how do I file a title ix complaint
+__label__university tell me about harassment prevention training
+__label__university what is the diversity and inclusion office
+__label__university how do I access disability accommodations
+__label__university tell me about accessible campus transportation
+__label__university what is the assisted listening device policy
+__label__university how do I request sign language interpreters
+__label__university tell me about the environmental sustainability office
+__label__university what is the recycling program
+__label__university how do I reduce my carbon footprint on campus
+__label__university tell me about green initiatives
+__label__university what is the composting program
+__label__university how do I join the sustainability club
+__label__university tell me about renewable energy projects
+__label__university what is the water conservation policy
+__label__university how do I report environmental violations
+__label__university tell me about the green building initiatives
+__label__university what is the university sustainability report
+__label__university how do I get involved in environmental advocacy
+__label__university tell me about the community service office
+__label__university what volunteer opportunities are available
+__label__university how do I start a community service project
+__label__university tell me about service learning courses
+__label__university what is the community engagement policy
+__label__university how do I connect with local nonprofits
+__label__university tell me about the civic engagement center
+__label__university what is the voter registration process
+__label__university how do I get involved in politics
+__label__university tell me about the political science club
+__label__university what is the student government
+__label__university how do I run for student government
+__label__university tell me about senate meetings
+__label__university what is the election schedule
+__label__university how do I vote in student elections
+__label__university tell me about the judicial board
+__label__university what is the appeals process
+__label__university how do I serve on a committee
+__label__university tell me about the student budget allocation
+__label__university what is the funding process for student organizations
+__label__university how do I request a room for an event
+__label__university tell me about catering services
+__label__university what is the event planning process
+__label__university how do I reserve a venue
+__label__university tell me about the theater facilities
+__label__university what performances are scheduled
+__label__university how do I get tickets to events
+__label__university tell me about the arts center
+__label__university what is the museum located
+__label__university how do I attend gallery openings
+__label__university tell me about the concert series
+__label__university what is the comedy show schedule
+__label__university how do I become a performer
+__label__university tell me about the performing arts program
+__label__university what is the music department
+__label__university how do I audition for the orchestra
+__label__university tell me about the choir
+__label__university what is the band program
+__label__university how do I join the marching band
+__label__university tell me about the dance program
+__label__university what is the theater program
+__label__university how do I audition for a play
+__label__university tell me about the film program
+__label__university what is the student film festival
+__label__university how do I submit my film
+__label__university tell me about the photography club
+__label__university what is the art studio location
+__label__university how do I access the studios after hours
+__label__university tell me about the art exhibitions
+__label__university what is the publication schedule for the newspaper
+__label__university how do I join the newspaper staff
+__label__university tell me about the literary magazine
+__label__university what is the submission deadline for writers
+__label__university how do I get published in the magazine
+__label__university tell me about the radio station
+__label__university what is the broadcast schedule
+__label__university how do I volunteer at the radio station
+__label__university tell me about the tv studio
+__label__university what is the videography equipment checkout process
+__label__university how do I reserve equipment
+__label__university tell me about the photography darkroom
+__label__university what is the digital media lab
+__label__university how do I access the design software
+__label__university tell me about 3d printing services
+__label__university what is the maker space
+__label__university how do I use the woodshop
+__label__university tell me about the metal shop
+__label__university what is the equipment safety training
+__label__university how do I get certified to use equipment
+__label__university tell me about the engineering labs
+__label__university what is the chemistry lab safety protocol
+__label__university how do I report a lab accident
+__label__university tell me about the biology department
+__label__university what is the physics department
+__label__university how do I enroll in physics classes
+__label__university tell me about the math tutoring services
+__label__university what is the writing center
+__label__university how do I get writing help
+__label__university tell me about peer tutoring
+__label__university what is the tutoring center hours
+__label__university how do I find a tutor
+__label__university tell me about the supplemental instruction program
+__label__university what is the exam preparation workshop
+__label__university how do I register for workshops
+__label__university tell me about the test anxiety workshop
+__label__university what is the study skills seminar
+__label__university how do I improve my time management
+__label__university tell me about the organization workshop
+__label__university what is the procrastination support group
+__label__university how do I join the support group
+__label__university tell me about the stress management program
+__label__university what is the meditation workshop
+__label__university how do I register for mindfulness classes
+__label__university tell me about the yoga classes
+__label__university what is the fitness center membership
+__label__university how do I access the gym
+__label__university tell me about the swimming pool
+__label__university what is the pool schedule
+__label__university how do I join the swim team
+__label__university tell me about the athletic programs
+__label__university what sports does the university offer
+__label__university how do I try out for a team
+__label__university tell me about athletic scholarships
+__label__university what is the intramural sports program
+__label__university how do I register for intramural sports
+__label__university tell me about the recreation department
+__label__university what outdoor activities are available
+__label__university how do I join the hiking club
+__label__university tell me about the outdoor adventure program
+__label__university what is the camping equipment rental
+__label__university how do I reserve camping gear
+__label__university tell me about the rock climbing wall
+__label__university what is the martial arts class schedule
+__label__university how do I register for martial arts
+__label__university tell me about the dance fitness classes
+__label__university what is the aerobics schedule
+__label__university how do I register for fitness classes

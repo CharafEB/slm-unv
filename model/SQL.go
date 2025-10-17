@@ -1,32 +1,30 @@
 package model
 
-import (
-	"context"
-	"fmt"
-)
+import "github.com/lib/pq"
 
-func (db *Tools) PerformDatabaseSearch(ctx context.Context, query string, args ...interface{}) ([]string, error) {
+func (db *Tools) AutherDBSearch(AuthorName string) ([]string, error) {
 	var response []string
 
-	// Execute the main query
-	rows, err := db.DB.QueryContext(ctx, query, args...)
+	query := "SELECT ARRAY(SELECT title FROM articles WHERE similarity(author, $1) > 0.3)"
+
+	err := db.DB.QueryRow(query, AuthorName).Scan(pq.Array(&response))
 	if err != nil {
 		return nil, err
 	}
-	defer rows.Close()
 
-	//Getting the result for the tables
-	for rows.Next() {
-		var title, author, content string
-		if err := rows.Scan(&title, &author, &content); err != nil {
-			return nil, err
-		}
-		response = append(response, fmt.Sprintf("Title: %s, Author: %s, Content: %s", title, author, content))
-	}
+	return response, nil
+}
 
-	if err := rows.Err(); err != nil {
+func (db *Tools) ArticleDBSearch(ArticleTitle string) ([]string, error) {
+
+	var response []string
+	// we had to  use similarity() in case where the user made an mistake sapling the  name to anabel this in you data base you have to => ' CREATE EXTENSION IF NOT EXISTS pg_trgm' to work
+
+	query := "SELECT array_to_json(ARRAY(SELECT title FROM articles WHERE similarity(author, $1) > 0.3))"
+	// Execute the main query
+	err := db.DB.QueryRow(query, ArticleTitle).Scan(&response)
+	if err != nil {
 		return nil, err
 	}
-
 	return response, nil
 }
