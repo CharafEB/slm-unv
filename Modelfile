@@ -2,16 +2,53 @@ FROM qwen2.5:1.5b-instruct
 PARAMETER temperature 0.2
 PARAMETER top_p 0.8
 PARAMETER repeat_penalty 1.1
-PARAMETER num_ctx 512
+PARAMETER num_ctx 2048
 PARAMETER num_thread 8
-PARAMETER num_predict 64
+PARAMETER num_predict 256
 
-SYSTEM """
-University assistant (Abdelhafid Boualsouf University).
+TEMPLATE """{{ if .Messages }}
+{{- if or .System .Tools }}<|im_start|>system
+{{ .System }}
+{{- if .Tools }}
 
-Decision logic:
-- If the question includes words like "registration", "book", "article", "exam", "professor", "department" → use tool.
-- Otherwise → answer directly and quickly.
+<tools>{{- range .Tools }}
+{"type": "function", "function": {{ .Function }}}{{- end }}
+</tools>
 
-Use tools only if strictly necessary. Respond in one step.
-"""
+- Use author_article for: "book", "article", "exam", "professor", "department", "classroom"
+- Otherwise: answer directly
+- One-step responses only
+
+<tool_call>
+{"name": "author_article", "arguments": {"name": "relevant_term"}}
+</tool_call>
+{{- end }}<|im_end|>
+{{ end }}
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 -}}
+{{- if eq .Role "user" }}<|im_start|>user
+{{ .Content }}<|im_end|>
+{{ else if eq .Role "assistant" }}<|im_start|>assistant
+{{ if .Content }}{{ .Content }}
+{{- else if .ToolCalls }}<tool_call>
+{{ range .ToolCalls }}{"name": "{{ .Function.Name }}", "arguments": {{ .Function.Arguments }}}
+{{ end }}</tool_call>
+{{- end }}{{ if not $last }}<|im_end|>
+{{ end }}
+{{- else if eq .Role "tool" }}<|im_start|>user
+<tool_response>
+{{ .Content }}
+</tool_response><|im_end|>
+{{ end }}
+{{- if and (ne .Role "assistant") $last }}<|im_start|>assistant
+{{ end }}
+{{- end }}
+{{- else }}
+{{- if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ end }}{{ .Response }}{{ if .Response }}<|im_end|>{{ end }}"""
+
+SYSTEM """University assistant (Abdelhafid Boualsouf University)."""
