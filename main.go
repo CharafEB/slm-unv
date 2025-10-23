@@ -14,6 +14,7 @@ import (
 	"github.com/CharafEB/slm-unv/tools"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
+	"github.com/mark3labs/mcphost/sdk"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -21,6 +22,11 @@ func main() {
 	// Load environment variables
 	if err := godotenv.Load(); err != nil {
 		log.Fatal("Error loading .env file")
+	}
+
+	// ⚠️ تحديد عنوان Ollama بشكل صريح
+	if os.Getenv("OLLAMA_HOST") == "" {
+		os.Setenv("OLLAMA_HOST", "http://localhost:11434")
 	}
 
 	// Setup context with cancellation on interrupt signal
@@ -54,6 +60,26 @@ func main() {
 	if err := rdb.Ping(ctx).Err(); err != nil {
 		log.Fatal("Error connecting to Redis:", err)
 	}
+	//Mcphost server
+	host, err := sdk.New(ctx, &sdk.Options{
+		Model:      "ollama:qwen2.5:v1",
+		ConfigFile: "",
+		MaxSteps:   5,
+		Streaming:  false,
+		Quiet:      true,
+	})
+	if err != nil {
+		log.Fatalf("MCPHost error: %v", err)
+	}
+	defer host.Close()
+
+	redisapp := router.Mcphost{
+		Host:    host,
+		Redis:   rdb,
+		Channel: "news_channel",
+	}
+
+	redisapp.Start(ctx)
 	log.Println("Connected to Redis")
 
 	// Create Application with all dependencies
@@ -65,15 +91,8 @@ func main() {
 	toolsApp := &tools.Tools{
 		Application: app,
 	}
-	log.Println("✅ Tools initialized")
-
-	// Create Ollama Router and start listening
-	ollamaRouter := router.NewOllamaRouter("http://localhost:11434", rdb, toolsApp)
-
-	log.Println("Starting Ollama Router...")
-	if err := ollamaRouter.Start(ctx); err != nil {
-		log.Fatal("Error starting router:", err)
-	}
+	toolsApp.AddTools()
+	log.Println("Tools initialized")
 
 	log.Println("Application shut down Goodbye lovely user!")
 }
