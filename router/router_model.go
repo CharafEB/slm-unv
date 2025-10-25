@@ -1,4 +1,4 @@
-package router
+package main
 
 import (
 	"context"
@@ -6,19 +6,12 @@ import (
 	"log"
 
 	"github.com/CharafEB/slm-unv/types"
-	"github.com/mark3labs/mcphost/sdk"
-	"github.com/redis/go-redis/v9"
 )
-
-type Mcphost struct {
-	Host    *sdk.MCPHost
-	Redis   *redis.Client
-	Channel string
-}
 
 func (h *Mcphost) Model(ctx context.Context, prompt string) (string, error) {
 
-	response, err := h.Host.Prompt(ctx, "who are you?")
+	//you had to add more model for more labels so that you can make a good resolute
+	response, err := h.Host.Prompt(ctx, "answer fast no thinking "+prompt)
 	if err != nil {
 		log.Fatalf("Prompt error: %v", err)
 	}
@@ -29,8 +22,6 @@ func (h *Mcphost) Model(ctx context.Context, prompt string) (string, error) {
 
 // ProcessMessage processes a message based on its label
 func (r *Mcphost) ProcessMessage(ctx context.Context, label, input string) (string, error) {
-	const ModelUnv = "qwen2.5:v1"
-	const ModelGeneral = "qwen2.5:1.5b-instruct"
 
 	switch label {
 	case "__label__general":

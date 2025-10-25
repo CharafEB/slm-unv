@@ -10,11 +10,11 @@ import (
 func main() {
     ctx := context.Background()
 
-    // إنشاء MCPHost مع خيارات مخصصة
+    // Create MCPHost with custom options
     host, err := sdk.New(ctx, &sdk.Options{
-        Model:      "ollama:qwen2.5:1.5b-instruct ", // ⚠️ لاحظ إضافة ollama: في البداية
-        ConfigFile: "",                              // استخدام المسار الافتراضي ~/.mcphost.yml
-        MaxSteps:   15,                              // عدد خطوات التفكير القصوى
+        Model:      "ollama:qwen2.5:1.5b-instruct ", // ⚠️ Note the addition of ollama: at the beginning
+        ConfigFile: "",                              // Use default path ~/.mcphost.yml
+        MaxSteps:   15,                              // Maximum thinking steps
         Streaming:  false,                           // تعطيل البث المباشر
         Quiet:      true,                            // إخفاء رسائل debug
     })
