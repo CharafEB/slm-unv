@@ -1,10 +1,9 @@
 import fasttext
 from datetime import datetime
-import redis
-import os
-from dotenv import load_dotenv
 import json 
-
+from connection import redis_connection
+import redis
+from fastapi import Depends
 model = fasttext.load_model("university_model_v2.bin")
 
 UNIVERSITY_KEYWORDS = {
@@ -12,21 +11,6 @@ UNIVERSITY_KEYWORDS = {
     "professor", "schedule", "grade", "lecture" , "UNV"
 }
 
-def RedisConnection():
-
-    load_dotenv("../.env")
-
-    r = redis.Redis(
-    host=os.getenv("REDISADD_PY"),
-    port=int(os.getenv("REDISPORT")),
-    username=os.getenv("REDISUSERNAME"),
-    password=os.getenv("REDISPASSWORD"),
-    decode_responses=True
-)
-
-    channel = "news_channel"
-    print("Connected to Redis...")
-    return r , channel;
 
 
 def fallback_similarity(user_input):
@@ -58,20 +42,11 @@ def log_uncertain_case(text, prob, sim, label):
     with open("uncertain_cases.log", "a") as f:
         f.write(f"[{datetime.now()}] ({label}, p={prob:.2f}, s={sim:.2f}) -> {text}\n")
 
-
-if __name__ == "__main__":
-    print("Router started (Ctrl+C to exit)")
-    con, channel = RedisConnection()
+async def mcp_req(channel :str , text : str ,redis_conn: redis.Redis =Depends(redis_connection)): 
     try:
-        while True:
-            text = input("You: ").strip()
-            if not text:
-                continue
-            if text.lower() == "exit":
-                break
-            #print(route_input(text))
-            con.publish(channel, json.dumps({"label":route_input(text) , "input":text} , indent=2))
-    except KeyboardInterrupt:
-        print("\n Goodby")
+        redis_conn.publish("new_channel", json.dumps({"label":route_input(text) , "input":text ,"user_channel" : channel} , indent=2))
+        return {"status": "success", "message": "Message sent"}
+    except Exception as e :
+        return {"status": "Bad", "message": str(e)}
     finally:
-        con.close()
+        redis_conn.close()

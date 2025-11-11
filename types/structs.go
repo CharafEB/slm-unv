@@ -29,6 +29,7 @@ type ArticleOutput struct {
 type Input struct {
 	Label string `json:"label"`
 	Input string `json:"input"`
+	UserChannel string `json:"user_channel"`
 }
 
 type Output struct {

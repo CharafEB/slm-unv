@@ -26,21 +26,21 @@ func NewMCPHostClient(model string) (*MCPHostClient, error) {
 
 	stdin, err := cmd.StdinPipe()
 	if err != nil {
-		return nil, fmt.Errorf("فشل في إنشاء stdin: %w", err)
+		return nil, fmt.Errorf("failed to create stdin pipe: %w", err)
 	}
 
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
-		return nil, fmt.Errorf("فشل في إنشاء stdout: %w", err)
+		return nil, fmt.Errorf("failed to create stdout pipe: %w", err)
 	}
 
 	stderr, err := cmd.StderrPipe()
 	if err != nil {
-		return nil, fmt.Errorf("فشل في إنشاء stderr: %w", err)
+		return nil, fmt.Errorf("failed to create stderr pipe: %w", err)
 	}
 
 	if err := cmd.Start(); err != nil {
-		return nil, fmt.Errorf("فشل في تشغيل mcphost: %w", err)
+		return nil, fmt.Errorf("failed to start mcphost: %w", err)
 	}
 
 	client := &MCPHostClient{
@@ -61,13 +61,13 @@ func (c *MCPHostClient) SendPrompt(prompt string) (string, error) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 
-	// إرسال الطلب
+
 	_, err := fmt.Fprintf(c.stdin, "%s\n", prompt)
 	if err != nil {
-		return "", fmt.Errorf("فشل في إرسال الطلب: %w", err)
+		return "", fmt.Errorf("failed to send request: %w", err)
 	}
 
-	// قراءة الاستجابة
+
 	scanner := bufio.NewScanner(c.stdout)
 	var response strings.Builder
 	var lineCount int
@@ -76,17 +76,17 @@ func (c *MCPHostClient) SendPrompt(prompt string) (string, error) {
 		line := scanner.Text()
 		lineCount++
 
-		// تخطي الأسطر الفارغة في البداية
+
 		if lineCount == 1 && strings.TrimSpace(line) == "" {
 			continue
 		}
 
-		// توقف عند سطر فارغ بعد الاستجابة
+
 		if strings.TrimSpace(line) == "" && lineCount > 1 {
 			break
 		}
 
-		// توقف عند prompt جديد (عادة يبدأ بـ >)
+
 		if strings.HasPrefix(line, ">") {
 			break
 		}
@@ -96,7 +96,7 @@ func (c *MCPHostClient) SendPrompt(prompt string) (string, error) {
 	}
 
 	if err := scanner.Err(); err != nil {
-		return "", fmt.Errorf("خطأ في القراءة: %w", err)
+		return "", fmt.Errorf("error reading output: %w", err)
 	}
 
 	return strings.TrimSpace(response.String()), nil
@@ -122,7 +122,7 @@ func (c *MCPHostClient) SendPromptWithTimeout(prompt string, timeout time.Durati
 
 	select {
 	case <-ctx.Done():
-		return "", fmt.Errorf("انتهت مهلة الانتظار بعد %v", timeout)
+		return "", fmt.Errorf("timeout occurred after %v", timeout)
 	case result := <-resultChan:
 		return result.response, result.err
 	}
@@ -133,10 +133,10 @@ func (c *MCPHostClient) Close() error {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 
-	// محاولة الإغلاق بشكل نظيف
+
 	fmt.Fprintln(c.stdin, "exit")
 
-	// انتظار لمدة ثانية
+
 	done := make(chan error, 1)
 	go func() {
 		done <- c.cmd.Wait()
@@ -146,7 +146,7 @@ func (c *MCPHostClient) Close() error {
 	case err := <-done:
 		return err
 	case <-time.After(2 * time.Second):
-		// إذا لم يتوقف، أوقفه بالقوة
+
 		return c.cmd.Process.Kill()
 	}
 }
@@ -175,7 +175,7 @@ func TestModel(t *testing.T) {
 		30*time.Second,
 	)
 	if err != nil {
-		fmt.Printf("❌ خطأ: %v\n", err)
+		fmt.Printf("Error: %v\n", err)
 		return
 	}
 	t.Logf("Responce: %s\n\n", response)

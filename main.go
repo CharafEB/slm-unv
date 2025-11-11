@@ -5,27 +5,21 @@ import (
 	"database/sql"
 	"log"
 	"os"
-	"os/signal"
-	"syscall"
 
 	"github.com/CharafEB/slm-unv/middlewares"
 	"github.com/CharafEB/slm-unv/model"
-	"github.com/CharafEB/slm-unv/router"
 	"github.com/CharafEB/slm-unv/tools"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
-	"github.com/redis/go-redis/v9"
+
+	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 
 func main() {
 	// Load environment variables
-	if err := godotenv.Load(); err != nil {
+	if err := godotenv.Load(".env"); err != nil {
 		log.Fatal("Error loading .env file")
 	}
-
-	// Setup context with cancellation on interrupt signal
-	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
-	defer cancel()
 
 	// Connect to PostgreSQL Database
 	conninfo := os.Getenv("DB")
@@ -43,37 +37,29 @@ func main() {
 	// Create store
 	store := model.NewStore(db)
 
-	// Connect to Redis
-	rdb := redis.NewClient(&redis.Options{
-		Addr:     os.Getenv("REDISADD_GO"),
-		Username: os.Getenv("REDISUSERNAME"),
-		Password: os.Getenv("REDISPASSWORD"),
-	})
-	defer rdb.Close()
-
-	if err := rdb.Ping(ctx).Err(); err != nil {
-		log.Fatal("Error connecting to Redis:", err)
-	}
-	log.Println("Connected to Redis")
+	// Create MCP server
+	server := mcp.NewServer(&mcp.Implementation{Name: "greeter", Version: "v1.0.0"}, nil)
 
 	// Create Application with all dependencies
 	app := &middlewares.Application{
 		Database: store,
+		Srv:      server,
 	}
-
 	// Create Tools
 	toolsApp := &tools.Tools{
 		Application: app,
 	}
-	log.Println("✅ Tools initialized")
+	
+	//initialize tools
+	toolsApp.AddTools()
+	log.Println("Tools initialized")
 
-	// Create Ollama Router and start listening
-	ollamaRouter := router.NewOllamaRouter("http://localhost:11434", rdb, toolsApp)
-
-	log.Println("Starting Ollama Router...")
-	if err := ollamaRouter.Start(ctx); err != nil {
-		log.Fatal("Error starting router:", err)
+	// Run the server over stdin/stdout, until the client disconnects.
+	if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
+		log.Fatal(err)
 	}
 
-	log.Println("Application shut down Goodbye lovely user!")
+	//To make Developer fill good about him self so that he will work better (very important)
+	log.Println("Application shut down Goodbye lovely Developer!")
+
 }
