@@ -3,11 +3,18 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 
 	"github.com/CharafEB/slm-unv/types"
 )
-
+//Publisher: do publish the slm response to the user channel
+func (r *Mcphost) Publisher(ctx context.Context, output ,userchannel string) error {
+	if err := r.Redis.Publish(ctx, userchannel, output).Err(); err != nil {
+		return err
+	}
+	return nil
+}
 func (h *Mcphost) Model(ctx context.Context, prompt string) (string, error) {
 
 	//you had to add more model for more labels so that you can make a good resolute
@@ -21,31 +28,50 @@ func (h *Mcphost) Model(ctx context.Context, prompt string) (string, error) {
 }
 
 // ProcessMessage processes a message based on its label
-func (r *Mcphost) ProcessMessage(ctx context.Context, label, input string) (string, error) {
+func (r *Mcphost) ProcessMessage(ctx context.Context, label, input , userchannel string) error {
 
 	switch label {
 	case "__label__general":
 		response, err := r.Model(ctx, input)
 		if err != nil {
-			return "Internal error, please try later", err
+			return fmt.Errorf("there is an internal err error: %v", err)
 		}
-		return response, nil
+		if err := r.Publisher(ctx, response , userchannel); err != nil {
+			return err
+		}
+		return nil
 
 	case "__label__author_article":
-		return r.Model(ctx, input)
+		response, err := r.Model(ctx, input)
+		if err != nil {
+			return fmt.Errorf("there is an internal err error: %v", err)
+		}
+		if err := r.Publisher(ctx, response , userchannel); err != nil {
+			return err
+		}
+		return nil
 
 	case "__label__article_search":
-		return r.Model(ctx, input)
+		response, err := r.Model(ctx, input)
+		if err != nil {
+			return fmt.Errorf("there is an internal err error: %v", err)
+		}
+		if err := r.Publisher(ctx, response , userchannel); err != nil {
+			return err
+		}
+		return nil
 
 	case "__label__university":
 		response, err := r.Model(ctx, input)
 		if err != nil {
-			return "Internal error, please try later", err
+			return fmt.Errorf("there is an internal err error: %v", err)
 		}
-		return response, nil
-
+		if err := r.Publisher(ctx, response , userchannel); err != nil {
+			return err
+		}
+		return nil
 	default:
-		return "Unknown label", nil
+		return fmt.Errorf("unknown label")
 	}
 }
 
@@ -65,6 +91,12 @@ func (r *Mcphost) Start(ctx context.Context) error {
 			return nil
 
 		default:
+			err := r.Redis.Publish(ctx, r.Channel, "ping").Err()
+			if err != nil {
+				log.Printf("Error publishing message: %v", err)
+				continue
+			}
+
 			msg, err := pubsub.ReceiveMessage(ctx)
 			if err != nil {
 				if ctx.Err() != nil {
@@ -81,16 +113,13 @@ func (r *Mcphost) Start(ctx context.Context) error {
 				continue
 			}
 
-			log.Printf("Received: Label=%s, Input=%s", input.Label, input.Input)
-
 			// Process with model
-			response, err := r.ProcessMessage(ctx, input.Label, input.Input)
-			if err != nil {
+			if err := r.ProcessMessage(ctx, input.Label, input.Input , input.UserChannel); err != nil {
+
 				log.Printf("Model error: %v", err)
 				continue
 			}
 
-			log.Printf(" Response: %s", response)
 		}
 	}
 }

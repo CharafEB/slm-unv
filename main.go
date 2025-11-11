@@ -17,7 +17,7 @@ import (
 
 func main() {
 	// Load environment variables
-	if err := godotenv.Load("../.env"); err != nil {
+	if err := godotenv.Load(".env"); err != nil {
 		log.Fatal("Error loading .env file")
 	}
 
@@ -49,12 +49,17 @@ func main() {
 	toolsApp := &tools.Tools{
 		Application: app,
 	}
+	
+	//initialize tools
 	toolsApp.AddTools()
-	// log.Println("Tools initialized")
+	log.Println("Tools initialized")
 
 	// Run the server over stdin/stdout, until the client disconnects.
 	if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
 		log.Fatal(err)
 	}
-	log.Println("Application shut down Goodbye lovely user!")
+
+	//To make Developer fill good about him self so that he will work better (very important)
+	log.Println("Application shut down Goodbye lovely Developer!")
+
 }

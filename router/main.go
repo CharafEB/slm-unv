@@ -61,7 +61,7 @@ func main() {
 		log.Println("Error connecting to Redis:", err)
 		return
 	}
-	
+
 	app := middlewares.Mcphost{
 		Host:    host,
 		Redis:   rdb,
@@ -76,6 +76,7 @@ func main() {
 		log.Println("Redis app error:", err)
 	}
 
-	//To make user fill good about him self so that he will use the app more (very important)
-	log.Println("Application shut down Goodbye lovely user!")
+	//To make Developer fill good about him self so that he will work better (very important)
+	log.Println("Application shut down Goodbye lovely Developer!")
+
 }
